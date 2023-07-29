@@ -23,11 +23,17 @@ function createGrid(userInput) {
 
 sizeButton.addEventListener("click", () => {
     let rowsColumns = prompt("How many rows/columns? Choose a number from 1 to 100.");
-    if (rowsColumns > 100 || rowsColumns <= 0) {
-        alert("Come on, from 1 to 100!");
+    let containsOnlyDigits = /^[0-9]+$/; //tests if value is a number
+    if (containsOnlyDigits.test(rowsColumns)) {
+        if (rowsColumns <= 0 || rowsColumns > 100) {
+            alert("Come on, from 1 to 100!");
+        }
+        else {
+            createGrid(rowsColumns);
+        }
     }
     else {
-        createGrid(rowsColumns);
+        alert("Do you not know what a number is ❓");
     }
 })
 

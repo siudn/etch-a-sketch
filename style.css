@@ -1,8 +1,29 @@
 body {
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     display: flex;
+    flex-direction: column;
     min-height: 100vh;
     justify-content: center;
     align-items: center;
+    background-color:snow;
+}
+
+p {
+    margin: 0;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+#title {
+    font-size: 64px;
+    font-weight: 800;
 }
 
 .grid {
@@ -10,12 +31,13 @@ body {
     flex-wrap: wrap;
     width: 800px;
     height: 800px;
+    background-color: white;
 }
 
 .square {
     box-sizing: border-box;
-    border: 1px solid black;
-    flex-basis: 6.25%;
+    border: 0.5px solid rgba(22, 19, 19, 0.342);
+    flex-shrink: 0;
 }
 
 .colored {
