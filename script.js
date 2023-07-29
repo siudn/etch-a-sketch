@@ -5,7 +5,7 @@ for (let i = 0; i < 16; i++) {
     for (let j = 0; j < 16; j++) {
         var square = document.createElement("div");
         square.classList.add("square");
-        grid.append(square);
+        grid.appendChild(square);
     }
 }
 
@@ -18,22 +18,20 @@ Array.from(elements).forEach((i) => {
 })
 
 function createGrid(userInput) {
-    grid.innerHTML = '';
+    grid.innerHTML = "";
     for (let i = 0; i < userInput; i++) {
         for (let j = 0; j < userInput; j++) {
             var square = document.createElement("div");
             square.classList.add("square");
-            grid.append(square);
+            square.style.flexBasis = `${100 / userInput}%`;
+            grid.appendChild(square);
         }
     }
 }
 
 sizeButton.addEventListener("click", () => {
     let rowsColumns = prompt("How many rows/columns? Choose a number from 1 to 100.");
-    if (rowsColumns > 100) {
-        alert("Number must be less than 100!");
-    }
-    else if (rowsColumns <= 0) {
+    if (rowsColumns > 100 || rowsColumns <= 0) {
         alert("Come on, from 1 to 100!");
     }
     else {
