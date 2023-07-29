@@ -32,8 +32,5 @@ sizeButton.addEventListener("click", () => {
             createGrid(rowsColumns);
         }
     }
-    else {
-        alert("Do you not know what a number is ❓");
-    }
 })
 
