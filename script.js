@@ -1,21 +1,7 @@
 const grid = document.querySelector(".grid");
 const sizeButton = document.querySelector("#change");
 
-for (let i = 0; i < 16; i++) {
-    for (let j = 0; j < 16; j++) {
-        var square = document.createElement("div");
-        square.classList.add("square");
-        grid.appendChild(square);
-    }
-}
-
-const elements = document.getElementsByClassName("square");
-
-Array.from(elements).forEach((i) => {
-    i.addEventListener("mouseover", () => {
-        i.classList.add("colored");
-    })
-})
+createGrid(16);
 
 function createGrid(userInput) {
     grid.innerHTML = "";
@@ -27,6 +13,12 @@ function createGrid(userInput) {
             grid.appendChild(square);
         }
     }
+    const elements = document.getElementsByClassName("square");
+    Array.from(elements).forEach((i) => {
+        i.addEventListener("mouseover", () => {
+            i.classList.add("colored");
+        })
+    })
 }
 
 sizeButton.addEventListener("click", () => {
