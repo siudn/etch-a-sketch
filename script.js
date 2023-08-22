@@ -13,10 +13,17 @@ function createGrid(userInput) {
             grid.appendChild(square);
         }
     }
+
+    let mouseDown = false;
+    grid.onmousedown = () => (mouseDown = true);
+    grid.onmouseup = () => (mouseDown = false);
+
     const elements = document.getElementsByClassName("square");
     Array.from(elements).forEach((i) => {
-        i.addEventListener("mouseover", () => {
-            i.classList.add("colored");
+        i.addEventListener("mouseover", (e) => {
+            if (mouseDown) {
+                i.classList.add("colored");
+            }
         })
     })
 }

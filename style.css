@@ -59,6 +59,11 @@ button {
     box-sizing: border-box;
     border: 0.5px solid rgba(22, 19, 19, 0.342);
     flex-shrink: 0;
+    -webkit-user-drag: none;
+    user-select: none;
+    -mov-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
 }
 
 .colored {
