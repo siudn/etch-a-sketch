@@ -15,16 +15,17 @@ function createGrid(userInput) {
     }
 
     let mouseDown = false;
-    grid.onmousedown = () => (mouseDown = true);
-    grid.onmouseup = () => (mouseDown = false);
+    document.body.onmousedown = () => (mouseDown = true);
+    document.body.onmouseup = () => (mouseDown = false);
 
     const elements = document.getElementsByClassName("square");
     Array.from(elements).forEach((i) => {
-        i.addEventListener("mouseover", (e) => {
+        i.addEventListener("mouseover", () => {
             if (mouseDown) {
                 i.classList.add("colored");
             }
         })
+        i.addEventListener("mousedown", () => i.classList.add("colored"));
     })
 }
 
